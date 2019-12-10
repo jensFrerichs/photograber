@@ -56,7 +56,7 @@ node_modules/
 /public/packs
 /public/packs-test
 /public/assets
-/public/photos
+/public/photos/*
 
 # Ignore yarn files
 /yarn-error.log
