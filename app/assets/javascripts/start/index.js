@@ -1,9 +1,10 @@
 $(document).ready(function(){
     let paths = [];
     let infoBox = $('#info');
-function updatePaths () {
-    $('img').each(function(){ paths.push($(this).attr('src')) });
-}
+
+    function updatePaths () {
+        $('img').each(function(){ paths.push($(this).attr('src')) });
+    }
 
 // --- img slider ---
     // https://github.com/woocommerce/FlexSlider/wiki/FlexSlider-Properties
