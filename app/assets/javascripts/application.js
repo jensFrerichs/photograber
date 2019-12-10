@@ -18,3 +18,18 @@
 //= require bootstrap-sprockets
 //= require jquery.flexslider
 //= require_tree .
+
+
+$(document).ready(function() {
+// --- svg header logo
+    $.fn.christmas = function () {
+        $(this).each(function () {
+            $(this).html($(this).text().split("").map(function (v, i) {
+                return '<span class="christmas-' + (i % 2 == 0 ? 'gold' : 'blue') + '">' + v + '</span>';
+            }).join(""));
+        });
+    };
+    $('h1.christmas').christmas();
+
+
+});

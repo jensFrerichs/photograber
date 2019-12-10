@@ -1,17 +1,10 @@
-<!--<div class="container">
-  <div class="row" id="content">
-    <%# @urls.each do |url| %>
-      <div class="photo col-md-4 mt-2">
-        <%#= image_tag(url) %>
-      </div>
-    <%# end %>
-  </div>
-</div>-->
-<div class="container" id="main">
+<div id="snow"></div>
+
+<div class="container mt-3" id="main">
   <div class="row">
-    <div id="flexslider" class="col-md-12">
-      <ul class="slides">
-        <% @urls.each_with_index do |url, index| %>
+    <div id="flexslider" class="col-md-12 mt-4">
+      <ul class="slides mt-5">
+        <% @urls.each do |url| %>
           <li>
             <img src="<%= url %>"/>
           </li>
@@ -19,7 +12,7 @@
       </ul>
     </div>
   </div>
-  <div class="row mt-5">
-    <button class="btn btn-small btn-success col-md-12" id="trigger">Fetch new pictures</button>
+  <div class="row text-center mt-5">
+    <div class="center col-md-12" id="info">Nimm ein Foto auf und es taucht hier auf!</div>
   </div>
 </div>
