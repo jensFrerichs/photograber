@@ -1,28 +1,26 @@
 class StartController < ApplicationController
   protect_from_forgery except: :get_new_pictures
+  before_action :set_paths_urls
   def index
+    @slideshow = true unless params[:grid]
     @test = 'test'
-    @paths = Dir["#{Rails.root}/public/photos/*"]
-    @urls = shorten_path(@paths)
   end
   def get_new_pictures
-    @paths = Dir["#{Rails.root}/public/photos/*"]
-    @urls = shorten_path(@paths)
     @old_paths = params[:data]
     @urls.reject! { |url| @old_paths.include?(url) }
-    if @urls.size >= 1
-      @urls.map! do |url|
-        "<img src='#{url}'/>"
-      end
-    end
     render json: @urls
   end
 
   private
 
+  def set_paths_urls
+    @paths = Dir["#{Rails.root}/public/photos/*.JPG"]
+    @urls = shorten_path(@paths)
+  end
+
   def shorten_path(paths)
     prefix = "#{Rails.root}/public"
-    @paths.map do |url|
+    paths.map do |url|
       url.gsub(prefix, '')
     end
   end

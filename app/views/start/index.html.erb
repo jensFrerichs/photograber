@@ -1,18 +1,32 @@
 <div id="snow"></div>
 
 <div class="container mt-3" id="main">
-  <div class="row">
-    <div id="flexslider" class="col-md-12 mt-4">
-      <ul class="slides mt-5">
-        <% @urls.each do |url| %>
-          <li>
-            <img src="<%= url %>"/>
-          </li>
-        <% end %>
-      </ul>
+    <div class="row">
+      <div id="flexslider" class="col-md-12 mt-4">
+        <ul class="slides mt-5">
+          <% @urls.each do |url| %>
+            <li>
+              <img src="<%= url %>" class="slide_image" />
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="row text-center mt-5">
-    <div class="center col-md-12" id="info">Nimm ein Foto auf und es taucht hier auf!</div>
-  </div>
+    <div class="row text-center mt-5">
+      <div class="center col-md-12" id="info">Nimm ein Foto auf und es taucht hier auf!</div>
+      <div class="center col-md-12 mt-4 mb-3">
+        <div id="gridBtn">
+          <%= fa_icon "th 4x" %>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="grid">
+      <% @urls.each_with_index do |url, i| %>
+        <div class="col-md-4 p-4">
+            <img src="<%= url %>" alt="<%= i %>" class="grid_image"/>
+        </div>
+      <% end %>
+    </div>
+
 </div>
+

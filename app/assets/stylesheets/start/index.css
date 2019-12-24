@@ -12,4 +12,9 @@ li {
 #info {
     font-weight: bold;
 }
-
+#gridLink {
+    color: black;
+}
+#grid {
+    display: none;
+}
